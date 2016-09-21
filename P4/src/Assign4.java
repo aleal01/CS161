@@ -22,6 +22,11 @@ public class Assign4 {
 		// pre: num.length > 0
 		// post: return int representation of num, 
 		// e.g num:{1,2,3} returns int: 123
+		if(num.length == 1){
+			return num[0];
+		} else {
+			
+		}
 		System.out.println("convertNum not implemented yet");		
 		return 0;
 	}
