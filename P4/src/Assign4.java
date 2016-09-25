@@ -70,9 +70,6 @@ public class Assign4 {
 	}
 	
 	public ArrayList<String> intersection( ArrayList<String> AL1, ArrayList<String> AL2){
-		//base case: both arraylists are empty
-		//operation: check if elements are equal
-		//return: similar elements
 		// pre:  AL1 and AL2 are not empty
 		//       and elements in AL1 are unique
 		//       and elements in AL2 are unique
@@ -80,19 +77,18 @@ public class Assign4 {
 		// post: return an ArrayList with elements that are in both AL1 and AL2
 		//       *** in the order they occur in AL1 ***
 		//       and *** leave AL1 and AL2 unchanged ***
-		if(AL1.isEmpty() && AL2.isEmpty()){
-		return "";
-		}
-		else{
-		
-		}
-		System.out.println("intersection not implemented yet");		
-		return intHelper(AL1, AL2, 0, 0);
-	}
-	private ArrayList<String> intHelper(ArrayList<String> AL1, ArrayList<String> AL2, int index1, int index2){
-		ArrayList<String> empty = new ArrayList<String>();
-		//increment index1 then index2 and compare al1[i1] to al2[i2]
-		return empty;
+		if(AL1.isEmpty())
+	        return AL1;
+	    else {
+	        ArrayList<String> answer = new ArrayList<String>();
+	        String intersec = AL1.get(0);
+	        if (AL2.contains(intersec)) 
+	        	answer.add(intersec);
+	        ArrayList<String> co = new ArrayList<>();
+	        co.addAll(AL1.subList(1, AL1.size()));
+	        answer.addAll(intersection(co, AL1));
+	        return answer;
+	    }
 	}
 	
 	public static void main(String[] args){
