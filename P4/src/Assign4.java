@@ -80,6 +80,12 @@ public class Assign4 {
 		// post: return an ArrayList with elements that are in both AL1 and AL2
 		//       *** in the order they occur in AL1 ***
 		//       and *** leave AL1 and AL2 unchanged ***
+		if(AL1.isEmpty() && AL2.isEmpty()){
+		return "";
+		}
+		else{
+		
+		}
 		System.out.println("intersection not implemented yet");		
 		return intHelper(AL1, AL2, 0, 0);
 	}
