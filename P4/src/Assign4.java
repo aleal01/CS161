@@ -11,10 +11,7 @@ public class Assign4 {
 		// pre: n>0
 		// post: print a pattern of n+1 ( 0 to n ) lines
 		// line i (i = 0 to n) has i stars ("*")
-		//                     followed by (n-i) stripes ("-")
-		if(n == 0){
-			return;
-		} 
+		//                     followed by (n-i) stripes ("-") 
 		System.out.println("printPattern not implemented yet");
 	}
 	
@@ -22,15 +19,14 @@ public class Assign4 {
 		// pre: num.length > 0
 		// post: return int representation of num, 
 		// e.g num:{1,2,3} returns int: 123
-		int length = num.length;
-		if(num.length == 1){
-			return num[0];
-		} else {
-			return num[length-1] + num[length-1];
-			
-		}
+		System.out.println("convertNum not implemented yet");		
+		return 0;
 	}
-	
+	private int convertNum(int[] num, int atIndex, int lastIndex, int result){
+		return result;
+		
+	}
+
 	public ArrayList<String> intersection( ArrayList<String> AL1, ArrayList<String> AL2){
 		// pre:  AL1 and AL2 are not empty
 		//       and elements in AL1 are unique
