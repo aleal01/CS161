@@ -17,9 +17,6 @@ public class Assign4 {
 		// post: print a pattern of n+1 ( 0 to n ) lines
 		// line i (i = 0 to n) has i stars ("*")
 		//                     followed by (n-i) stripes ("-") 
-<<<<<<< HEAD
-		System.out.println("printPattern not implemented yet");
-=======
 		//System.out.println("printPattern not implemented yet");
 		//2 helpers
 		//1)prints output of 2
@@ -48,7 +45,6 @@ public class Assign4 {
 		}else{
 			return ret;
 		}
->>>>>>> bdbb87e9bf862f89e25f75acd79e6ddf456ea04e
 	}
 	
 	public int convertNum(int[] num){
@@ -58,10 +54,6 @@ public class Assign4 {
 		// pre: num.length > 0
 		// post: return int representation of num, 
 		// e.g num:{1,2,3} returns int: 123
-<<<<<<< HEAD
-		System.out.println("convertNum not implemented yet");		
-		return 0;
-=======
 		//System.out.println("convertNum not implemented yet");		
 		return convertHelper(num,num.length-1);
 	}
@@ -75,13 +67,8 @@ public class Assign4 {
 		}
 		//recursive call and operation
 		return ((convertHelper(num,index-1)*10)+num[index]);
->>>>>>> bdbb87e9bf862f89e25f75acd79e6ddf456ea04e
 	}
-	private int convertNum(int[] num, int atIndex, int lastIndex, int result){
-		return result;
-		
-	}
-
+	
 	public ArrayList<String> intersection( ArrayList<String> AL1, ArrayList<String> AL2){
 		//base case: both arraylists are empty
 		//operation: check if elements are equal
