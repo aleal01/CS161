@@ -111,7 +111,7 @@ public class Assign4 {
 		ArrayList<String> AL2 = new ArrayList<String>();
 		
 		AL1.add("a"); AL1.add("b"); AL1.add("c");
-		AL2.add("b"); AL2.add("c"); AL2.add("d"); AL2.add("e");
+		AL2.add("x"); AL2.add("y");
 		ArrayList<String> intersect = A3.intersection(AL1,AL2);
 		System.out.println(AL1 + " intersect " + AL2 + " = " + intersect);		
 	}
