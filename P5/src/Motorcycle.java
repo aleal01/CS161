@@ -2,9 +2,10 @@ public class Motorcycle extends Vehicle {
 	
 	private int cost;
 	
-	public Motorcycle(int numWheels, boolean licenseRequired) {
-		super(numWheels, licenseRequired);
-		// TODO Auto-generated constructor stub
+	public Motorcycle(int cost){
+		super(2, true);
+		this.cost = cost;
+		
 	}
 
 	public int getCost() {
@@ -26,13 +27,15 @@ public class Motorcycle extends Vehicle {
 
 	@Override
 	public int costOfMaint(int miles) {
-		// TODO Auto-generated method stub
-		return 0;
+		return (cost * miles +10);
 	}
 
 	@Override
 	public boolean updateNumWheels(int numWheels) {
-		// TODO Auto-generated method stub
+		if(numWheels == 2 || numWheels == 3){
+			setNumWheels(numWheels);
+			return true;
+		}
 		return false;
 	}
 
