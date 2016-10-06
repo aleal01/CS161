@@ -7,7 +7,7 @@ public class Semi extends Vehicle {
 	private int cost;
 	
 	public Semi(int cost){
-		super(2, true);
+		super(18, true);
 		this.cost = cost;
 		
 	}
@@ -38,6 +38,7 @@ public class Semi extends Vehicle {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println();
 
 	}
 

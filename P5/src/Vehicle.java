@@ -1,4 +1,3 @@
-
 public abstract class Vehicle {
 	
 	private int numWheels;
@@ -35,4 +34,6 @@ public abstract class Vehicle {
 	 * Postcondition: if return is true, vehicle number of wheels updated
 	 * Postcondition: return value set based on algorithm appropriate to type of vehicle
 	 */
-	}
+
+
+}
