@@ -9,15 +9,24 @@ public class Recursion {
 	}
 
 	public String addStars(ArrayList<Character> str) {
-		if(str.size() ==0){
-		return null;
-		}
-		return null;
+		return "";
 	}
 
 	public int sumOfSquares(ArrayList<Integer> num) {
-		return num.get(0);
+		//arraylist 1,2,3
+		//return New Arraylist 1,1,2,4,3,9
+		int result = 0;
+		int index = 0;
+		if(num.get(index) == 0 || num.get(index)== null ){
+			return 0;
 		
+		} else{
+			result += Math.pow(num.get(index), 2);
+			num.add(index + 1, (int) Math.pow(num.get(index), 2));
+			index++;
+			sumOfSquares(num);
+		}
+		return result;
 	}
 
 	public int sumOfCubes(ArrayList<Integer> num) {
@@ -31,7 +40,7 @@ public class Recursion {
 		int a = 1, b = 2, c = 3;
 		ints.add(a);
 		ints.add(b);
-		ints.add(c);
+		System.out.println(ints.toString());
 		
 		Recursion r1 = new Recursion();
 		r1.sumOfSquares(ints);
