@@ -13,7 +13,8 @@ public class Recit7{
 		System.out.println(ls.search(array, 46368));
 		System.out.println(ls.search(array, 99999));
 		System.out.println();
-
+		System.out.println("Linear Search Ended");
+		//change
 		System.out.println("Binary Search");
 		BinarySearch bs = new BinarySearch();
 //	and here...
@@ -22,6 +23,7 @@ public class Recit7{
 		System.out.println(bs.search(array, 2584));
 		System.out.println(bs.search(array, 46368));
 		System.out.println(bs.search(array, 99999));
+		System.out.println("Binary Search Ended");
 		
 		System.out.println("Random Search");
 		RandomSearch rs = new RandomSearch();
@@ -31,5 +33,6 @@ public class Recit7{
 		System.out.println(rs.search(array, 2584));
 		System.out.println(rs.search(array, 46368));
 		System.out.println(rs.search(array, 99999));
+		System.out.println("Random Search Ended");
 	}
 }

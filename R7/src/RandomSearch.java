@@ -3,11 +3,12 @@ import java.util.Random;
 public class RandomSearch implements Searching{
 	public int search(int[] numbersToSearch, int numberToSearchFor) {
 		Random rn = new Random();
+		
 		for(int i = 0; i < 5; i++){
 			int index = rn.nextInt(numbersToSearch.length - 0) + 0;
 			if(numberToSearchFor== numbersToSearch[index]){
 				return index;
-			}
+			} 
 		}
 		return -1;
 		}
