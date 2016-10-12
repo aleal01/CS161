@@ -1,5 +1,10 @@
-
 public class CaesarCipher implements Cipher{
+	
+	private int numberOfPositions;
+	
+	public CaesarCipher(int numberOfPositions){
+		this.numberOfPositions = numberOfPositions;
+	}
 
 	@Override
 	public String encrypt(String plaintext) {
