@@ -9,30 +9,57 @@ public class CaesarCipher implements Cipher{
 
 	@Override
 	public String encrypt(String plaintext) {
-		this.nstring = plaintext;
-		char[] buffer = plaintext.toCharArray();
+		 StringBuilder strBuilder = new StringBuilder();
+		    char c;
+		    for (int i = 0; i < plaintext.length(); i++)
+		    {
+		        c = plaintext.charAt(i);
+		        // if c is letter ONLY then shift them, else directly add it
+		        if (Character.isLetter(c))
+		        {
+		        c = (char) (plaintext.charAt(i) + numberOfPositions);
+		        // System.out.println(c);
 
-		// Loop over characters.
-		for (int i = 0; i < buffer.length; i++) {
+		        // checking case or range check is important, just if (c > 'z'
+		        // || c > 'Z')
+		        // will not work
+		        if ((Character.isLowerCase(plaintext.charAt(i)) && c > 'z')
+		            || (Character.isUpperCase(plaintext.charAt(i)) && c > 'Z'))
 
-		    // Shift letter, moving back or forward 26 places if needed.
-		    char letter = buffer[i];
-		    letter = (char) (letter + numberOfPositions);
-		    if (letter > 'z') {
-			letter = (char) (letter - 26);
-		    } else if (letter < 'a') {
-			letter = (char) (letter + 26);
+		            c = (char) (plaintext.charAt(i) - (26 - numberOfPositions));
+		        }
+		        strBuilder.append(c);
 		    }
-		    buffer[i] = letter;
-		}
-		// Return final string.
-		return new String(buffer);
-	    }
+		    return strBuilder.toString();
+		    }
 
 	@Override
 	public String decrypt(String ciphertext) {
-		// Return final string.
-		return nstring;
+		// trying to create a reverse negative
+		
+		int nshift = numberOfPositions - (numberOfPositions * 2);
+		StringBuilder strBuilder = new StringBuilder();
+	    char c;
+	    for (int i = 0; i < ciphertext.length(); i++)
+	    {
+	        c = ciphertext.charAt(i);
+	        // if c is letter ONLY then shift them, else directly add it
+	        if (Character.isLetter(c))
+	        {
+	        c = (char) (ciphertext.charAt(i) + nshift);
+	        // System.out.println(c);
+
+	        // checking case or range check is important, just if (c > 'z'
+	        // || c > 'Z')
+	        // will not work
+	        if ((Character.isLowerCase(ciphertext.charAt(i)) && c > 'z')
+	            || (Character.isUpperCase(ciphertext.charAt(i)) && c > 'Z'))
+
+	            c = (char) (ciphertext.charAt(i) - (26 - nshift));
+	        }
+	        strBuilder.append(c);
+	    }
+	    return strBuilder.toString();
 	    }
 	
 	
@@ -43,7 +70,7 @@ public class CaesarCipher implements Cipher{
 	
 	public static void main(String[] args){
 	    CaesarCipher cipher = new CaesarCipher(3);
-	    String plainText = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    String plainText = "G";
 	    System.out.println("Plaintext: " + plainText);
 	    String cipherText = cipher.encrypt(plainText);
 	    System.out.println("After encryption, cipherText: " + cipherText);
