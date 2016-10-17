@@ -1,9 +1,9 @@
 
-public class PolyAlphabeticalCipher implements Cipher {
+public class PolyAlphabeticCipher implements Cipher {
 	
 	private String key;
 
-	public PolyAlphabeticalCipher(String key) {
+	public PolyAlphabeticCipher(String key) {
 		// TODO Auto-generated constructor stub
 		this.key = key;
 	}
