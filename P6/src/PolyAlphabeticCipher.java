@@ -1,4 +1,3 @@
-
 public class PolyAlphabeticCipher implements Cipher {
 	
 	private String key;

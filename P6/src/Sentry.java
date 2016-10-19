@@ -20,23 +20,19 @@ public class Sentry {
 	// Catch all file processing related exceptions, and print the error message and exit in the catch block as shown below:
 	//System.err.println(e);
 	try{
-		FileReader filereader = new FileReader(inputFileName);
-		BufferedReader bufferedReader = new BufferedReader(filereader);
-		while((line = bufferedReader.readLine()) != null ){
-			System.out.println(line);
-			
-		bufferedReader.close();
+		System.out.println("Print Error");
 		}
-	} catch(FileNotFoundException ex){
-		System.out.println("Unable to open file");
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	} catch(){
+		System.out.println("To finish");
 	}
 	
 	public void decrypt(String inputFileName, String outputFileName){
-		System.out.println("To FINISH");
+		try{
+			System.out.println("Print Error");
+			}
+		} catch(){
+			System.out.println("To finish");
+		}
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -10,20 +10,16 @@ public class CaesarCipher implements Cipher {
 	@Override
 	public String encrypt(String plaintext) {
 		 {
-			    StringBuilder strBuilder = new StringBuilder();
+			 StringBuilder strBuilder = new StringBuilder();
 			    char c;
 			    for (int i = 0; i < plaintext.length(); i++)
 			    {
 			        c = plaintext.charAt(i);
-			        // if c is letter ONLY then shift them, else directly add it
 			        if (Character.isLetter(c))
 			        {
 			        c = (char) (plaintext.charAt(i) + numberOfPositions);
-			        System.out.println(c);
-
-			        // checking case or range check is important, just if (c > 'z'
-			        // || c > 'Z')
-			        // will not work
+			        // System.out.println(c);
+			        
 			        if ((Character.isLowerCase(plaintext.charAt(i)) && c > 'z')
 			            || (Character.isUpperCase(plaintext.charAt(i)) && c > 'Z'))
 
@@ -32,7 +28,7 @@ public class CaesarCipher implements Cipher {
 			        strBuilder.append(c);
 			    }
 			    return strBuilder.toString();
-		 }
+			    }
 			    }
 
 	@Override
@@ -49,8 +45,28 @@ public class CaesarCipher implements Cipher {
 				if ((Character.isLowerCase(ciphertext.charAt(i)) && c > 'z')
 						|| (Character.isUpperCase(ciphertext.charAt(i)) && c > 'Z'))
 
-					c = (char) ((char) (ciphertext.charAt(i) - numberOfPositions) - numberOfPositions); 
-
+					c = (char) ((char) (ciphertext.charAt(i) + (26 + numberOfPositions))); 
+				//fixes errors in codes, through using a switch statement
+				switch(c){
+				case '^':
+					c = 'x';
+					break;
+				case '_':
+					c = 'y';
+					break;
+				case '`':
+					c = 'z';
+					break;
+				case '>':
+					c = 'X';
+					break;
+				case '?':
+					c = 'Y';
+					break;
+				case '@':
+					c = 'Z';
+					break;	
+				}
 				// So since I could not debug I am creating a debuger program
 				// withing the program to fix the errors
 				// that were involved within the issue
@@ -63,7 +79,7 @@ public class CaesarCipher implements Cipher {
 
 	public static void main(String[] args) {
 		CaesarCipher cipher = new CaesarCipher(3);
-		String plainText = "abcdefghijklmnopqrstuvwxyz";
+		String plainText = "ABCDEGFGHIJKLMNOPQRSTUVWXYZ";
 		System.out.println("Plaintext: " + plainText);
 		String cipherText = cipher.encrypt(plainText);
 		System.out.println("After encryption, cipherText: " + cipherText);
