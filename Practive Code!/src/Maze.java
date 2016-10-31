@@ -41,6 +41,7 @@ public class Maze {
 		if (map[r][c] == 'S') {
 		    rStart = r;
 		    cStart = c;
+		    System.out.println(r + "," + c);
 		}
     }
 
@@ -53,50 +54,37 @@ public class Maze {
     public String findPathFrom(int r, int c, String indent) {
 	
 	if (r < 0 || r >= nrows || c < 0 || c >= ncols) {
-	    if (debug) System.out.println(indent + " Failed. Out of bounds.");
 	    return "";
 	}
 
 	char charHere = map[r][c];
 	if (charHere == '#' || charHere == '.') {
-	    if (debug) System.out.println(indent + " Failed. Found " + charHere);
 	    return "";
 	}
 
 	if (charHere == 'G') {
-	    if (debug) System.out.println(indent + " YIPPEE. Found G");
 	    return "G";
 	}
 	
 	map[r][c] = '.';
-	if (debug)
-	    printMap(indent);
-
-	if (debug) System.out.println(indent + " Trying Up");
 	String restOfPath = findPathFrom(r-1,c," " + indent);
-	if (restOfPath.length() > 0) {
-	    if (debug) System.out.println(indent + " Up succeeded. Returning " + "U" + restOfPath);
+	
+	if (restOfPath.length() > 0) { 
 	    return "U" + restOfPath;
 	}
-
-	if (debug) System.out.println(indent + " Trying Right");
 	restOfPath = findPathFrom(r,c+1, " " + indent);
+	
 	if (restOfPath.length() > 0) {
-	    if (debug) System.out.println(indent + " Right succeeded. Returning " + "R" + restOfPath);
 	    return "R" + restOfPath;
 	}
-
-	if (debug) System.out.println(indent + " Trying Down");
 	restOfPath = findPathFrom(r+1,c, " " + indent);
+	
 	if (restOfPath.length() > 0) {
-	    if (debug) System.out.println(indent + " Down succeeded. Returning " + "D" + restOfPath);
 	    return "D" + restOfPath;
 	}
 
-	if (debug) System.out.println(indent + " Trying Left");
 	restOfPath = findPathFrom(r,c-1, " " + indent);
 	if (restOfPath.length() > 0) {
-	    if (debug) System.out.println(indent + " Left succeeded. Returning " + "L" + restOfPath);
 	    return "L" + restOfPath;
 	}
 	map[r][c] = ' ';
