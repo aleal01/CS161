@@ -151,17 +151,20 @@ public class Maze implements IMaze {
 
 	public static void main(String[] args) {
 		String filename = args[0];
-		int[] startpos;
+		
 		
 		Maze maze = new Maze();
-		char[][] mazes;
-		
-		mazes = maze.readFile(filename);
-		System.out.println(mazes);
-		startpos = maze.findStart(mazes);
-		String path = maze.findPath(mazes, startpos);
-		System.out.println(path);
+		char[][] mazes = maze.readFile(filename);
+		int[] start = maze.findStart(mazes);
+		maze.readFile(filename);
 		maze.printMaze(mazes);
+		System.out.println(maze.printMaze(mazes));
+		
+		System.out.println("Finding Start for you:): ");
+		System.out.println(start.toString());
+		
+		// Solving maze filename now
+		System.out.println("Solving Maze for you: ");
 	    }
 
 	}

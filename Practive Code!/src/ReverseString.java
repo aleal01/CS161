@@ -22,8 +22,8 @@ public class ReverseString {
 	public static void main(String[] args) {
 
 		ReverseString rs = new ReverseString();
-		System.out.println(rs.reverseString("racecar"));
-		System.out.println(rs.reverseString2("racecar"));
+		System.out.println(rs.reverseString("Ian"));
+		System.out.println(rs.reverseString2("TacoCat"));
 
 	}
 
