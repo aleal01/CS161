@@ -78,16 +78,19 @@ public class Maze implements IMaze {
 		}
 		
 		maze[r][c] = '.';
+		
 		String wheres = recPath(maze, r-1, c);
 		
 		if (wheres.length() > 0) { 
 		    return "U" + wheres;
 		}
+		
 		wheres = recPath(maze,r,c+1);
 		
 		if (wheres.length() > 0) {
 		    return "R" + wheres;
 		}
+		
 		wheres = recPath(maze,r+1,c);
 		
 		if (wheres.length() > 0) {
