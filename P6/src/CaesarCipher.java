@@ -79,7 +79,7 @@ public class CaesarCipher implements Cipher {
 
 	public static void main(String[] args) {
 		CaesarCipher cipher = new CaesarCipher(3);
-		String plainText = "ABCDEGFGHIJKLMNOPQRSTUVWXYZ";
+		String plainText = "ADRIANISBITCH!";
 		System.out.println("Plaintext: " + plainText);
 		String cipherText = cipher.encrypt(plainText);
 		System.out.println("After encryption, cipherText: " + cipherText);
